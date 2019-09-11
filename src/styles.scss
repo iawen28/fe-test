@@ -1,0 +1,375 @@
+@import './variables.scss';
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: GothamHTF-Book;
+}
+
+.App {
+  width: 100vw;
+  overflow: hidden;
+}
+
+@font-face {
+    font-family: GothamHTF-Bold;
+    src: url("./fonts/GothamHTF-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: GothamHTF-Book;
+    src: url("./fonts/GothamHTF-Book.otf") format("opentype");
+}
+
+@font-face {
+    font-family: GothamHTF-BookItalic;
+    src: url("./fonts/GothamHTF-BookItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: GothamHTF-Medium;
+    src: url("./fonts/GothamHTF-Medium.otf") format("opentype");
+}
+
+.font-medium {
+  font-family: GothamHTF-Medium;
+}
+
+.font-bold {
+  font-family: GothamHTF-Bold;
+}
+
+.font-italic {
+  font-family: GothamHTF-BookItalic;
+}
+
+.font-os {
+  font-family: "Open Sans";
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.xs-visible {
+  display: none !important;
+}
+
+.xs-hidden {
+  display: flex;
+}
+
+.spaced {
+  white-space: pre;
+}
+
+.container-fluid {
+  padding: 0 !important;
+}
+
+input[type=text], select {
+  box-sizing: border-box;
+  width: 60%;
+  padding: 12px 0px;
+  display: inline-block;
+  border: 0;
+  border-bottom: 1px solid $footerGray;
+  background-color: transparent;
+  color: $footerGray;
+  font-family: GothamHTF-Book;
+}
+
+input[type=submit] {
+  width: 40%;
+  background-color: transparent;
+  color: white;
+  padding: 12px 10%;
+  margin: 8px 0;
+  border: 2px solid $footerGray;
+  cursor: pointer;
+  margin-left: 5px;
+  font-family: GothamHTF-Bold;
+  text-transform: uppercase;
+}
+
+#header {
+  width: 100vw;
+  height: 125px;
+  border-bottom: 1px solid $grayD;
+  overflow: hidden;
+  white-space: nowrap;
+  .top-bar {
+    height: 35px;
+    background-color: black;
+    color: white;
+    font-size: 0.6em;
+    letter-spacing: 1px;
+  }
+  .bottom-area {
+    height: 90px;
+  }
+  .rings svg {
+    position: absolute;
+    width: 110px; 
+  }
+  .header-left-area > span {
+    margin-left: 50px;
+  }
+  .right > span, .icon, .icons {
+    margin-right: 25px;
+  }
+  .xs-menu {
+    display: none;
+  }
+}
+
+
+#prod-details {
+  border: 1px solid black;
+  margin-left: 3.5vw;
+  width: 93vw;
+
+
+}
+
+#features {
+  border: 1px solid black;
+    margin-left: 3.5vw;
+  width: 93vw;
+
+}
+
+#recProds {
+  margin: 50px 3.5vw;
+  width: 93vw;
+  font-family: GothamHTF-Medium;
+  font-size: 0.7em;
+  color: $grayX;
+}
+
+#recs > div{
+  display: inline-block;
+  img {
+    width: 20vw;
+    height: 20vw;
+    padding: 1vw;
+  }
+  h5, h6 {
+    padding:0;
+    margin:5px 0 0 0;
+  }
+  h5 {
+    color: $grayX;
+  }
+  h6 {
+    color: $priceX;
+  }
+
+}
+
+#footer {
+  white-space: nowrap;
+  font-size: 0.7em;
+  .footer-top {
+    height: 60px;
+    color: $grayC;
+    background-color: $footerFont;
+  }
+  .footer-top > div {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid $grayC;
+   }
+   .footer-top > div:last-child {
+    border: none;
+   }
+   .footer-middle, .footer-bottom {
+    color: $footerGray;
+    background-color: black;
+    a {
+      text-decoration: underline;
+      color: $footerGray;
+    }
+   }
+   .footer-middle {
+    height: 260px;
+    div {
+      margin-left: 5.3vw;
+      margin-top: 70px;
+      float: left;
+    }
+    h4 {
+      text-transform: uppercase;
+      font-family: GothamHTF-Bold;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0pt;
+      line-height: 200%;
+    }
+    .sm-section{
+      width: 7.8vw;
+    }
+    .nl-section {
+      width: 20.5vw;
+    }
+    .stores-section {
+      width: 14vw;
+    }
+    .icons {
+      margin-left: 0;
+      margin-top: 15px;
+    }
+    .icons>svg:first-child {
+      margin-right: 3vw;
+    }
+
+   }
+   .footer-bottom {
+    height: 40px;
+    border-top: 1px solid $footerGray;
+   }
+
+}
+
+
+@media only screen and (max-width: 575px) {
+  .xs-hidden {
+    display: none !important;
+  }
+  .xs-visible {
+    display: inline-block;
+  }
+  .bottom-area {
+    height: 70px;
+  }
+  .rings, .icons {
+      transform: scale(0.78, 0.78);
+  }
+  #header {
+    height: 115px;
+    .icon {
+      margin-right: 15px;
+    }
+    .menu-bars {
+      margin-left: 15px;
+    }
+    .xs-menu > div {
+      background-color: white;
+      padding: 12px;
+      height: 20px;
+      border-bottom: 1px solid $grayD;
+      z-index: 10;
+    }
+    .xs-menu {
+      display: block;
+      height: 60px;
+      width: 100px;
+      position: absolute;
+      margin-top: 15px;
+      border: 1px solid $grayD;
+      transform: scaleY(0);
+      transition: transform 0.5s ease-in-out;
+      transform-origin: top;
+    }
+    .active.xs-menu {
+      transform: scaleY(1);
+    }
+    .menu-bars span, .menu-bars span:before, .menu-bars span:after {
+      cursor: pointer;
+      width: 18px;
+      height: 2px;
+      background-color: black;
+      position: absolute;
+      display: block;
+      content: '';
+    }
+    .menu-bars span:before {
+      top: -7px; 
+    }
+    .menu-bars span:after {
+      bottom: -7px;
+    }
+
+    .menu-bars span, .menu-bars span:before, .menu-bars span:after {
+      transition: all 0.5s ease-in-out;
+    }
+    .menu-bars.active > span {
+      background-color: transparent;
+    }
+    .menu-bars.active span:before, .menu-bars.active span:after {
+      top: 0;
+    }
+    .menu-bars.active span:before {
+      transform: rotate(45deg);
+    }
+    .menu-bars.active span:after {
+      transform: rotate(-45deg);
+    }
+  }
+  #prod-details {
+
+  }
+
+  #recProds {
+
+  }
+
+  #footer {
+    .footer-top > div:nth-child(2) {
+      border: none;
+    }
+    .footer-middle { 
+      width: 100vw;
+      margin-top: 0;
+      background: black;
+      .sm-section {
+        display: none;
+      }
+      div {
+        float: none;
+        margin-top: 20px;
+      }
+      .stores-section {
+        display: none;
+      }
+      .nl-section {
+        padding: 20px 0;
+        margin-top: 0;
+        width: 80vw;
+        margin-left: 10vw;
+      }
+      .icons {
+        float: left;
+      }
+    }
+    .xs-footer-middle > div{
+      margin-left: 0;
+
+    }
+  }
+
+  #features {
+
+  }
+
+
+
+}
