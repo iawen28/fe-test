@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.scss","Features.scss"],"names":[],"mappings":"AAEA,KACE,wBAHoB,CCAtB,UACE,qBAAsB","file":"main.2c1e0cd3.chunk.css","sourcesContent":["$primaryColor: #DEDEDE;\n\n.App {\n  background-color: $primaryColor;\n}\n\n",".Features {\n  border: 2px solid gray;\n}"]}
