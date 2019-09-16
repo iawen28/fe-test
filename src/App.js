@@ -50,9 +50,19 @@ class App extends Component {
       const id = prods[i].id;
       const desc = prods[i].description;
       const imgs = allImages[prods[i].id];
+
+      let tag;
+
+      // tag var should be taken from field that currently doesn't exist in api, like prods[i].tag
+      if (i===0) {
+        tag = "Los Angeles Favorite";
+      } else if (i === 2) {
+        tag = "Sold out"
+      }
       const src = imgs[Math.floor(Math.random() * imgs.length)]['url'];
-      prodArr.push({id, price, desc, src});
+      prodArr.push({id, price, desc, src, tag});
     }
+    console.log(prodArr);
     this.setState({recommendedProducts: prodArr});
 
     // return imgs[Math.floor(Math.random() * imgs.length)]['url'];

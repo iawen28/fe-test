@@ -156,40 +156,56 @@ input[type=submit] {
 }
 
 #recProds {
-  margin: 50px 3.5vw;
-  width: 93vw;
+  margin: 0 0 80px 0;
+  padding: 35px 3.47vw;
+  background-color: $grayF;
+  // margin: 50px 0;
   font-family: GothamHTF-Medium;
-  font-size: 0.7em;
   color: $grayX;
+  h2 {
+    padding: 10px 0 25px 0;
+  }
 }
 
-#recs > div{
-  display: inline-block;
-  img {
-    width: 20vw;
-    height: 20vw;
-    padding: 1vw;
+#recs {
+  .bg-img {
+    position: relative;
+    width: 22vw;
+    height: 26.2vw;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .tag-text {
+      position: absolute;
+      margin: 0.42vw;
+      padding: 6px;
+      background-color: white;
+      text-transform: uppercase;
+      font-size: 0.5em;
+    }
   }
-  h5, h6 {
-    padding:0;
-    margin:5px 0 0 0;
-  }
-  h5 {
-    color: $grayX;
-  }
-  h6 {
-    color: $priceX;
+  .rec-caption {
+      h5, h6 {
+        margin: 7px 0 0 0;
+        padding:0;
+      }
+      h5 {
+        color: $grayX;
+      }
+      h6 {
+        color: $priceX;
+      }
   }
 
 }
 
 #footer {
-  white-space: nowrap;
   font-size: 0.7em;
+  white-space: nowrap;
   .footer-top {
     height: 60px;
     color: $grayC;
-    background-color: $footerFont;
+    background-color: $grayF;
   }
   .footer-top > div {
       height: 30px;
@@ -251,6 +267,9 @@ input[type=submit] {
 
 
 @media only screen and (max-width: 575px) {
+  body {
+    font-size: 0.8em;
+  }
   .xs-hidden {
     display: none !important;
   }
@@ -266,7 +285,10 @@ input[type=submit] {
   #header {
     height: 115px;
     .icon {
-      margin-right: 15px;
+      margin-right: 5vw;
+    }
+    .icons {
+      margin-right: 0;
     }
     .menu-bars {
       margin-left: 15px;
@@ -276,7 +298,7 @@ input[type=submit] {
       padding: 12px;
       height: 20px;
       border-bottom: 1px solid $grayD;
-      z-index: 10;
+      z-index: 50;
     }
     .xs-menu {
       display: block;
@@ -329,7 +351,29 @@ input[type=submit] {
   }
 
   #recProds {
+    padding: 8vw 2.4vw 3vw 2.4vw;
+    margin-bottom: 16vw;
+    text-align: center;
+    h2 {
+      padding: 0 0 15px 0;
+      margin: 15px 0;
+    }
 
+  }
+
+  #recs {
+    .bg-img {
+      width: 46.666667vw;
+      height: 53.333333vw;
+      .tag-text {
+        padding: 8px;
+        margin: 1.6vw;
+      }
+    }
+    .rec-caption {
+      margin-bottom: 5vw;
+      text-align: left;
+    }
   }
 
   #footer {

@@ -1,19 +1,30 @@
 import React from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Recs = ({ recs }) => {
   return (
     <div id="recs">
+      <Grid fluid>
+        <Row>
       {recs.map((rec) => (
-        <div key={rec.id}>
-          <img src={rec.src}/>
+        <Col xs={6} sm={3} key={rec.id}>
+          <div className="bg-img" style={{backgroundImage: 'url(' + rec.src + ')'}}>
+          {rec.tag && 
+            <div className="tag-text">{rec.tag}</div>
+          }
+          </div>
           <div className="rec-caption font-book">
             <h5>{rec.desc}</h5>
             <h6>${rec.price}</h6>
           </div>
-        </div>
+
+        </Col>
       ))}
+            </Row>
+      </Grid>
     </div>
   )
+
 };
 
 export default Recs;
