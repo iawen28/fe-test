@@ -336,79 +336,79 @@ input[type=submit] {
   .xs-hidden {
     display: none !important;
   }
-  .bottom-area {
-    height: 70px;
-  }
   #header {
     height: 105px;
-    .icon {
-      margin-right: 12px;
-      height: 23px;
-      width: auto;
-    }
-    .icons {
-      margin-right: 10px;
-    }
-    .rings {
-      transform: scale(0.7778);
-      margin-top: 4px;
-    }
-    .menu-bars {
-      margin-left: 20px;
-    }
-    .xs-menu > div {
-      background-color: white;
-      padding: 12px;
-      width: 100vw;
-      height: 20px;
-      border-bottom: 1px solid $grayD;
-    }
-    .xs-menu {
-      display: block;
-      background-color: white;
-      z-index: 50;
-      position: absolute;
-      margin-top: 35px;
-      border-top: 1px solid $grayD;
-      border-right: 1px solid $grayD;
-      border-left: 1px solid $grayD;
-      transform: scaleY(0);
-      transition: transform 0.5s ease-in-out;
-      transform-origin: top;
-    }
-    .active.xs-menu {
-      transform: scaleY(1);
-    }
-    .menu-bars span, .menu-bars span:before, .menu-bars span:after {
-      cursor: pointer;
-      width: 18px;
-      height: 2px;
-      background-color: black;
-      position: absolute;
-      display: block;
-      content: '';
-    }
-    .menu-bars span:before {
-      top: -6px; 
-    }
-    .menu-bars span:after {
-      bottom: -6px;
-    }
+    .bottom-area {
+      height: 70px;
+      .icon {
+        margin-right: 12px;
+        height: 23px;
+        width: auto;
+      }
+      .icons {
+        margin-right: 10px;
+      }
+      .rings {
+        transform: scale(0.7778);
+        margin-top: 4px;
+      }
+      .menu-bars {
+        margin-left: 20px;
+      }
+      .xs-menu > div {
+        background-color: white;
+        padding: 12px;
+        width: 100vw;
+        height: 20px;
+        border-bottom: 1px solid $grayD;
+      }
+      .xs-menu {
+        display: block;
+        background-color: white;
+        z-index: 50;
+        position: absolute;
+        margin-top: 35px;
+        border-top: 1px solid $grayD;
+        border-right: 1px solid $grayD;
+        border-left: 1px solid $grayD;
+        transform: scaleY(0);
+        transition: transform 0.5s ease-in-out;
+        transform-origin: top;
+      }
+      .active.xs-menu {
+        transform: scaleY(1);
+      }
+      .menu-bars span, .menu-bars span:before, .menu-bars span:after {
+        cursor: pointer;
+        width: 18px;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        display: block;
+        content: '';
+      }
+      .menu-bars span:before {
+        top: -6px; 
+      }
+      .menu-bars span:after {
+        bottom: -6px;
+      }
 
-    .menu-bars span, .menu-bars span:before, .menu-bars span:after {
-      transition: all 0.5s ease-in-out;
-    }
-    .menu-bars.active > span {
-      background-color: transparent;
-    }
-    .menu-bars.active span:before, .menu-bars.active span:after {
-      top: 0;
-    }
-    .menu-bars.active span:before {
-      transform: rotate(45deg);
-    }
-    .menu-bars.active span:after {
-      transform: rotate(-45deg);
+      .menu-bars span, .menu-bars span:before, .menu-bars span:after {
+        transition: all 0.5s ease-in-out;
+      }
+      .menu-bars.active > span {
+        background-color: transparent;
+      }
+      .menu-bars.active span:before, .menu-bars.active span:after {
+        top: 0;
+      }
+      .menu-bars.active span:before {
+        transform: rotate(45deg);
+      }
+      .menu-bars.active span:after {
+        transform: rotate(-45deg);
+      }
     }
   }
   #prod-details {
