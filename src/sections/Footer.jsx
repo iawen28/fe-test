@@ -28,82 +28,103 @@ class Footer extends React.Component {
                 <FontAwesomeIcon icon={faBox} /><span className="spaced"> Free Returns</span>
             </Col>
           </Row>
-          <div className="footer-middle">
-            <div className="sm-section"> <h4>Men</h4>
-                <ul>
-                  <li>OCA Low</li>
-                  <li>OCA High</li>
-                  <li>CATIBA Low</li>
-                  <li>CATIBA High</li>
-                </ul>
+        </Grid>
+        <div className="footer-middle vertical-center center">
+
+            <div className="sm-sections xs-hidden">
+
+              <div className="sm-section"> <h4>Men</h4>
+                  <ul>
+                    <li>OCA Low</li>
+                    <li>OCA High</li>
+                    <li>CATIBA Low</li>
+                    <li>CATIBA High</li>
+                  </ul>
+              </div>
+              <div className="sm-section"> <h4>Women</h4>
+                  <ul>
+                    <li>OCA Low</li>
+                    <li>OCA High</li>
+                    <li>CATIBA Low</li>
+                    <li>CATIBA High</li>
+                  </ul>
+              </div>
+              <div className="sm-section"> <h4>Support</h4>
+                  <ul>
+                    <li>FAQ</li>
+                    <li>Returns</li>
+                    <li>Live Chat</li>
+                  </ul>
+              </div>
+              <div className="sm-section"> <h4>About</h4>
+                  <ul>
+                    <li>Mission</li>
+                    <li>Vision</li>
+                    <li>Future</li>
+                  </ul>
+              </div>
             </div>
-            <div className="sm-section"> <h4>Women</h4>
-                <ul>
-                  <li>OCA Low</li>
-                  <li>OCA High</li>
-                  <li>CATIBA Low</li>
-                  <li>CATIBA High</li>
-                </ul>
+            <div className="input-sections">
+              <div className="stores-section xs-hidden">
+                <h4>Pop-up Stores</h4>
+                  <ul>
+                    <li>Find near you</li>
+                    <li>Register</li>
+                  </ul>
+                <form action="/">
+                  <input type="text" placeholder="Find your shirts here" name="fname"/>
+                  <FontAwesomeIcon icon={faSearch}/>
+                </form>
+              </div>
+
+              <div className="nl-section">
+                <h4>Newsletter</h4>
+
+                <form action="/">
+                  <input type="text" placeholder="Enter email" email="email"/>
+                  <input type="submit" value="Join Us"/>
+                </form>
+                <div className="icons">
+                  <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                  <FontAwesomeIcon icon={faFacebookSquare} size="2x"/>
+                </div>
+              </div>
             </div>
-            <div className="sm-section"> <h4>Support</h4>
+            <div className="xsf-menu xs-visible">
+              <div className="xsf-section">
+                <h4>Shop</h4>
+                <ul>
+                  <li>CATIBA</li>
+                  <li>OCA</li>
+                </ul>
+              </div>
+              <div className="xsf-section">
+                <h4>Support</h4>
                 <ul>
                   <li>FAQ</li>
                   <li>Returns</li>
                   <li>Live Chat</li>
-                </ul>
-            </div>
-            <div className="sm-section"> <h4>About</h4>
-                <ul>
-                  <li>Mission</li>
-                  <li>Vision</li>
-                  <li>Future</li>
-                </ul>
-            </div>
-            <div className="stores-section">
-              <h4>Pop-up Stores</h4>
-                <ul>
-                  <li>Find near you</li>
-                  <li>Register</li>
-                </ul>
-              <form action="/">
-                <input type="text" placeholder="Find your sneakers here" name="fname"/>
-                <FontAwesomeIcon icon={faSearch}/>
-              </form>
-
-            </div>
-            <div className="nl-section"><h4>Newsletter</h4>
-
-
-
-            <form action="/">
-              <input type="text" placeholder="Enter email" email="email"/>
-              <input type="submit" value="Join Us"/>
-            </form>
-            <div className="icons">
-              <FontAwesomeIcon icon={faFacebookSquare} size="2x"/>
-              <FontAwesomeIcon icon={faInstagram} size="2x"/>
-            </div>
-            </div>
-
-              <Row className="xs-footer-middle xs-visible">
-                <Col xs={6}>
-                <h4>Shop</h4>
-                <h4>Support</h4>
-                </Col>
-                <Col xs={6}>
+                </ul></div>
+              <div className="xsf-section">
                 <h4>About</h4>
+              </div>
+              <div className="xsf-section">
                 <h4>Blog</h4>
+              </div>
+              <div className="xsf-section">
                 <h4>Pop-up Stores</h4>
-                </Col>
-              </Row>
+              </div>
+
+            </div>
+
+        </div>
 
 
-          </div>
-
+        <Grid fluid>
           <Row className="vertical-center footer-bottom">
-            <Col xs={12}>
-              <span className="font-os center spaced">
-                Copyright Ⓒ CARIUMA. All Rights Reserved. <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+            <Col xs={12} className="ta-center">
+              <span className="font-os spaced">
+                <span className="xs-newline">Copyright &copy; CARIUMA. All Rights Reserved. </span> <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
               </span>
             </Col>
 
