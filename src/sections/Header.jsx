@@ -52,12 +52,12 @@ class Header extends React.Component {
               </div>
             </Col>
             <Col xs={4}>
-              <div className="right">
-              <span style={{lineHeight: 200 + '%'}} className="xs-hidden">ABOUT</span>
-              <div className="icons">
-                <FontAwesomeIcon className="icon" icon={faShoppingBag} size="2x"/>
-                <FontAwesomeIcon className="icon" icon={faUser} size="2x"/>
-              </div>
+              <div className="header-right-area">
+                <span style={{lineHeight: 200 + '%'}} className="xs-hidden">ABOUT</span>
+                <div className="icons">
+                  <FontAwesomeIcon className="icon" icon={faShoppingBag} size="2x"/>
+                  <FontAwesomeIcon className="icon" icon={faUser} size="2x"/>
+                </div>
               </div>
             </Col>
         </Row>

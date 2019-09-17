@@ -66,11 +66,6 @@ body {
   text-align: center;
 }
 
-.right {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .spaced {
   white-space: pre;
 }
@@ -83,7 +78,7 @@ body {
   margin: 0 !important;
 }
 
-.col-xs-12 {
+.col-xs-12, .col-xs-4 {
   padding: 0 !important;
 }
 
@@ -125,8 +120,6 @@ input[type=submit] {
   width: 100vw;
   height: 125px;
   border-bottom: 1px solid $grayD;
-  overflow: hidden;
-  white-space: nowrap;
   .top-bar {
     height: 35px;
     background-color: black;
@@ -136,16 +129,32 @@ input[type=submit] {
   }
   .bottom-area {
     height: 90px;
+    font-size: 12px;
   }
   .rings svg {
     position: absolute;
-    width: 110px; 
+    width: 75px; 
   }
-  .header-left-area > span {
-    margin-left: 50px;
+  .header-left-area {
+    margin-left: 10px;
+    span {
+      margin-left: 2.778vw;
+    }
   }
-  .right > span, .icon, .icons {
-    margin-right: 25px;
+  .header-right-area {
+    display: flex;
+    justify-content: flex-end;
+    span {
+      margin-right: 2.639vw;
+    }
+  }
+  .icon {
+    margin-right: 1.3889vw;
+    height: 26px;
+    width: auto;
+  }
+  .icons {
+    margin-right: 30px;
   }
   .xs-menu {
     display: none;
@@ -331,30 +340,38 @@ input[type=submit] {
     height: 70px;
   }
   #header {
-    height: 115px;
+    height: 105px;
     .icon {
-      margin-right: 5vw;
+      margin-right: 12px;
+      height: 23px;
+      width: auto;
     }
     .icons {
-      margin-right: 0;
+      margin-right: 10px;
+    }
+    .rings {
+      transform: scale(0.7778);
+      margin-top: 4px;
     }
     .menu-bars {
-      margin-left: 15px;
+      margin-left: 20px;
     }
     .xs-menu > div {
       background-color: white;
       padding: 12px;
+      width: 100vw;
       height: 20px;
       border-bottom: 1px solid $grayD;
-      z-index: 50;
     }
     .xs-menu {
       display: block;
-      height: 60px;
-      width: 100px;
+      background-color: white;
+      z-index: 50;
       position: absolute;
-      margin-top: 15px;
-      border: 1px solid $grayD;
+      margin-top: 35px;
+      border-top: 1px solid $grayD;
+      border-right: 1px solid $grayD;
+      border-left: 1px solid $grayD;
       transform: scaleY(0);
       transition: transform 0.5s ease-in-out;
       transform-origin: top;
@@ -372,10 +389,10 @@ input[type=submit] {
       content: '';
     }
     .menu-bars span:before {
-      top: -7px; 
+      top: -6px; 
     }
     .menu-bars span:after {
-      bottom: -7px;
+      bottom: -6px;
     }
 
     .menu-bars span, .menu-bars span:before, .menu-bars span:after {
