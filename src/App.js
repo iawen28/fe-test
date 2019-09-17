@@ -11,28 +11,31 @@ import Footer from './sections/Footer';
 class App extends Component {
   state = {
     products: [],
-    currentProductId: 1,
+    currentProductId: 7,
     recommendedProducts: [],
-    productImages: {}
+    productImages: {},
+    mwTab: "men"
   }
 
   componentDidMount() {
     let promises = [];
-    fetch('https://anatta-demo-app.herokuapp.com/api/products?access_token=access')
+    let obj = {};
+    fetch('https://anatta-demo-app.herokuapp.com/api/products')
     .then(res => res.json())
     .then((data) => {
       this.setState({ products: data });
-      this.state.products.map((product) => {
+      data.map((product) => {
         const id = product.id;
-        promises.push(
-        fetch('https://anatta-demo-app.herokuapp.com/api/products/' + id + '/image?access_token=access')
+        return promises.push(
+        fetch('https://anatta-demo-app.herokuapp.com/api/products/' + id + '/image')
           .then(res => res.json())
           .then((data2) => {
-            this.state.productImages[id] = data2;
+            obj[id] = data2;
         })
         .catch(console.log));
       })
       Promise.all(promises).then(()=>{
+        this.setState({productImages: obj});
         this.getRecs();
       })
       
@@ -44,6 +47,7 @@ class App extends Component {
     let prodArr = [];
     const prods = this.state.products;
     const allImages = this.state.productImages;
+    console.log("***", allImages);
     const iterations = Math.min(4, prods.length);
     for (let i=0; i<iterations;i++) {
       const price = prods[i].price;
@@ -82,16 +86,11 @@ class App extends Component {
         </div>
         */}
 
-
+        <div id="feats-deets">
+          <ProdDetails />
+          <Features />
+        </div>
         <Grid fluid>
-          <Row reverse>
-            <Col xs={12} sm={6}>
-              <Features />
-            </Col>
-            <Col xs={12} sm={6}>
-              <ProdDetails />
-            </Col>
-          </Row>
           <Row>
             <Col xs={12}>
               <RecProds recommendedProducts={this.state.recommendedProducts}/>

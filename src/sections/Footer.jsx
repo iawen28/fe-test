@@ -124,7 +124,7 @@ class Footer extends React.Component {
           <Row className="vertical-center footer-bottom">
             <Col xs={12} className="ta-center">
               <span className="font-os spaced">
-                <span className="xs-newline">Copyright &copy; CARIUMA. All Rights Reserved. </span> <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+                <span className="xs-newline">Copyright &copy; CARIUMA. All Rights Reserved. </span> <a href="/">Terms of Use</a> | <a href="/">Privacy Policy</a>
               </span>
             </Col>
 

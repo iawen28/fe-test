@@ -8,9 +8,8 @@ class Features extends React.Component {
   render() {
     return (
       <div id="features">
-     <h1> Features </h1>
-     <Carousel />
-     </div>
+        <Carousel />
+      </div>
      )
    }
 }
