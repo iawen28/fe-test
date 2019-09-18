@@ -11,7 +11,7 @@ import Footer from './sections/Footer';
 class App extends Component {
   state = {
     products: [],
-    currentProductId: 3,
+    currentProductId: null,
     recommendedProducts: [],
     productImages: null,
     mwTab: "men"
@@ -24,6 +24,7 @@ class App extends Component {
     .then(res => res.json())
     .then((data) => {
       this.setState({ products: data });
+      this.initId();
       data.map((product) => {
         const id = product.id;
         return promises.push(
@@ -40,6 +41,15 @@ class App extends Component {
       })
     })
     .catch(console.log)
+  }
+
+  initId() {
+    let firstId = null, thirdId = null;
+    if (this.state.products.length > 0) {
+      firstId = this.state.products[0].id;
+      thirdId = this.state.products[2].id; // wouldn't be needed with a more populated API
+    }
+    this.setState({currentProductId: thirdId});
   }
 
   getRecs() {

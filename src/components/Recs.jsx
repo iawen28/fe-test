@@ -3,7 +3,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Recs = ({ recs }) => {
   return (
-    <div id="recs">
+    <div className="rec-sec">
       <Grid fluid>
         <Row>
       {recs.map((rec) => (

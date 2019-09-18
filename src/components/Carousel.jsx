@@ -26,9 +26,11 @@ class Carousel  extends React.Component {
       <div>
         <Slider {...settings}>
         {imgs.map((img, i) => {
-          return (<div key={'carouselImg' + i}>
+          return (
+            <div key={'carouselImg' + i}>
               <div className="bg-img" style={{backgroundImage: 'url(' + img.url + ')'}}></div>
-            </div>)
+            </div>
+          )
         })}
         </Slider>
       </div>
