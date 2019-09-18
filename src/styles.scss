@@ -196,6 +196,16 @@ input[type=submit] {
         margin-right: 0.38vw;
       }
     }
+    .slick-arrow {
+      background-color: transparent;
+      z-index: 100;
+    }
+    .slick-prev {
+      left: 8px;
+    }
+    .slick-next {
+      right: 8px;
+    }
     .slick-thumb > .slick-active  {
       border: 2px solid $green;
     }
@@ -462,8 +472,9 @@ input[type=submit] {
       .bg-img {
         height: 80vw;
       }
-
-
+      .slick-arrow {
+        display: none !important;
+      }
       .slick-dots {
         bottom: -14.1vw;
       }

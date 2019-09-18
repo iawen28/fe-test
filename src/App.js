@@ -61,7 +61,6 @@ class App extends Component {
       const src = imgs[Math.floor(Math.random() * imgs.length)]['url'];
       prodArr.push({id, price, desc, src, tag});
     }
-    console.log(prodArr);
     this.setState({recommendedProducts: prodArr});
   }
 
@@ -72,7 +71,7 @@ class App extends Component {
         <div id="feats-deets">
           <ProdDetails />
           {this.state.productImages &&
-          <Features imgs={this.state.productImages[this.state.currentProductId]}/>
+          <Features imgs={this.state.productImages[this.state.currentProductId]}/> 
           }
         </div>
         <Grid fluid>
