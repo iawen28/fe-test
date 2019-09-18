@@ -11,9 +11,9 @@ import Footer from './sections/Footer';
 class App extends Component {
   state = {
     products: [],
-    currentProductId: 7,
+    currentProductId: 3,
     recommendedProducts: [],
-    productImages: {},
+    productImages: null,
     mwTab: "men"
   }
 
@@ -38,7 +38,6 @@ class App extends Component {
         this.setState({productImages: obj});
         this.getRecs();
       })
-      
     })
     .catch(console.log)
   }
@@ -47,17 +46,13 @@ class App extends Component {
     let prodArr = [];
     const prods = this.state.products;
     const allImages = this.state.productImages;
-    console.log("***", allImages);
     const iterations = Math.min(4, prods.length);
     for (let i=0; i<iterations;i++) {
       const price = prods[i].price;
       const id = prods[i].id;
       const desc = prods[i].description;
       const imgs = allImages[prods[i].id];
-
-      let tag;
-
-      // tag var should be taken from field that currently doesn't exist in api, like prods[i].tag
+      let tag; // tag var should be taken from field that currently doesn't exist in api
       if (i===0) {
         tag = "Los Angeles Favorite";
       } else if (i === 2) {
@@ -68,27 +63,17 @@ class App extends Component {
     }
     console.log(prodArr);
     this.setState({recommendedProducts: prodArr});
-
-    // return imgs[Math.floor(Math.random() * imgs.length)]['url'];
   }
 
   render() {
     return (
     <div className="App">
       <Header />
-
-
-        {/*<div>
-        <p>API Testing</p>
-          {this.state.products.map((product) => (
-            <span key={product.id}>{product.name + ' - ' + product.description} <br/></span>
-          ))}
-        </div>
-        */}
-
         <div id="feats-deets">
           <ProdDetails />
-          <Features />
+          {this.state.productImages &&
+          <Features imgs={this.state.productImages[this.state.currentProductId]}/>
+          }
         </div>
         <Grid fluid>
           <Row>
@@ -100,7 +85,7 @@ class App extends Component {
       <Footer />
     </div>
   );
-}
+  }
 }
 
 export default App;

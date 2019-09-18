@@ -1,12 +1,18 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-class Carousel extends React.Component {
+class Carousel  extends React.Component {
+  constructor(props) {
+    super();
+  }
   render() {
+    const imgs = this.props.imgs;
     var settings = {
-      customPaging: function (i) {
+      customPaging: function(i) {
         return (
-            <img alt="" src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"/ >
+          <a href="/">
+            <img alt="" src={imgs[i].url} />
+          </a>
         );
       },
       dots: true,
@@ -17,27 +23,15 @@ class Carousel extends React.Component {
       slidesToScroll: 1
     };
     return (
-      <Slider {...settings}>
-
-
-        {/*{images.map((img) => (
-            <div>
-              <img src={img.src} />
-            </div>
-          ))}*/}
-
-
-        <div>
-          <div className="bg-img" style={{backgroundImage: 'url(' + "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" + ')'}}></div>
-          {/*<img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"/ >*/}
-        </div>
-        <div>
-          <div className="bg-img" style={{backgroundImage: 'url(' + "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" + ')'}}></div>
-          {/*<img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"/ >*/}
-        </div>
-
-
-      </Slider>
+      <div>
+        <Slider {...settings}>
+        {imgs.map((img, i) => {
+          return (<div key={'carouselImg' + i}>
+              <div className="bg-img" style={{backgroundImage: 'url(' + img.url + ')'}}></div>
+            </div>)
+        })}
+        </Slider>
+      </div>
     );
   }
 }

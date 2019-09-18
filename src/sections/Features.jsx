@@ -8,7 +8,7 @@ class Features extends React.Component {
   render() {
     return (
       <div id="features">
-        <Carousel />
+        <Carousel imgs={this.props.imgs}/>
       </div>
      )
    }
