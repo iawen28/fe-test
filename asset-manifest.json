@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fe-test/static/css/main.4599863d.chunk.css",
+    "main.css": "/fe-test/static/css/main.2900baaf.chunk.css",
     "main.js": "/fe-test/static/js/main.7b52f610.chunk.js",
     "main.js.map": "/fe-test/static/js/main.7b52f610.chunk.js.map",
     "runtime~main.js": "/fe-test/static/js/runtime~main.22d828f4.js",
@@ -9,10 +9,10 @@
     "static/js/2.7103d215.chunk.js": "/fe-test/static/js/2.7103d215.chunk.js",
     "static/js/2.7103d215.chunk.js.map": "/fe-test/static/js/2.7103d215.chunk.js.map",
     "index.html": "/fe-test/index.html",
-    "precache-manifest.f253c88cc50b638401d921034bcdcb9d.js": "/fe-test/precache-manifest.f253c88cc50b638401d921034bcdcb9d.js",
+    "precache-manifest.cc45fede91ee782cb4e2c41f1411b109.js": "/fe-test/precache-manifest.cc45fede91ee782cb4e2c41f1411b109.js",
     "service-worker.js": "/fe-test/service-worker.js",
     "static/css/2.58f513f5.chunk.css.map": "/fe-test/static/css/2.58f513f5.chunk.css.map",
-    "static/css/main.4599863d.chunk.css.map": "/fe-test/static/css/main.4599863d.chunk.css.map",
+    "static/css/main.2900baaf.chunk.css.map": "/fe-test/static/css/main.2900baaf.chunk.css.map",
     "static/media/styles.scss": "/fe-test/static/media/GothamHTF-Medium.1fef2fca.otf"
   }
 }
