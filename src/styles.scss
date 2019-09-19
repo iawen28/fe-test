@@ -118,6 +118,7 @@ input[type=radio]:checked + label {
 input[type=radio] + label {
   border-color: transparent;
   border-style: solid;
+  cursor: pointer;
 }
 
 #header {
@@ -172,6 +173,76 @@ input[type=radio] + label {
   #prod-details {
     transition: transform 0.15s linear;
     margin-left: 3.472vw;
+    .prod-overview {
+      margin-bottom: 18px;
+      .first-dr {
+        margin-bottom: 6px;
+        margin-top: 18px;
+      }
+      .deets-row {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        .description {
+          font-size: 24px;
+        }
+        .price {
+          font-size: 18px;
+          color: $grayD;
+        }
+        .reviews {
+          font-size: 14px;
+          span {
+            color: $grayD;
+            display: flex;
+            align-items: center;
+              .star {
+                margin: 5px 1px;
+                position: relative;
+                display: block;
+                color: $green;
+                width: 0px;
+                height: 0px;
+                border-right: 10px solid transparent;
+                border-bottom: 7px solid $green;
+                border-left: 10px solid transparent;
+                transform: rotate(35deg);
+                &:last-child {
+                  margin-right: 5px;
+                }
+              }
+              .star:before {
+                border-bottom: 8px solid $green;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                position: absolute;
+                height: 0;
+                width: 0;
+                top: -4.5px;
+                left: -6.5px;
+                display: block;
+                content: '';
+                transform: rotate(-35deg);
+              }
+              .star:after {
+                position: absolute;
+                display: block;
+                color: $green;
+                top: 0.3px;
+                left: -10.5px;
+                width: 0px;
+                height: 0px;
+                border-right: 10px solid transparent;
+                border-bottom: 7px solid $green;
+                border-left: 10px solid transparent;
+                transform: rotate(-70deg);
+                content: '';
+              }
+          }
+        }
+      }
+    }
     .details-box {
       border: 1px solid $grayC;
       border-bottom: 0px;
@@ -180,6 +251,7 @@ input[type=radio] + label {
       display: flex;
       height: 39px;
       .men, .women {
+        cursor: pointer;
         width: 50%;
         font-size: 16px;
         height: 100%;
@@ -314,15 +386,16 @@ input[type=radio] + label {
       }
     }
     .slick-arrow {
-      background-color: transparent;
-      z-index: 100;
+      //background-color: transparent;
+      display: none;
+      //z-index: 100;
     }
-    .slick-prev {
-      left: -5px;
-    }
-    .slick-next {
-      right: 40px;
-    }
+    // .slick-prev {
+    //   left: -5px;
+    // }
+    // .slick-next {
+    //   right: 40px;
+    // }
     .bg-img {
       width: 100%;
       height: 37.15vw;
@@ -479,6 +552,9 @@ input[type=radio] + label {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 1023px) {
+  #feats-deets {
+    height: 500px;
+  }
   #features {
     width: calc(94vw - 300px);
     margin-left: -20px;
@@ -624,6 +700,48 @@ input[type=radio] + label {
     #prod-details {
       margin: 0 5.33vw 30px 5.33vw;
       width: 89.34vw;
+      .prod-overview {
+        margin: 20px 0;
+        .deets-row {
+          margin-bottom: 1px;
+          margin-top: 0;
+        }
+        .description {
+          font-size: 22px;
+        }
+        .price {
+          font-size: 14px;
+        }
+        .reviews {
+          font-size: 12px;
+          &:first-child {
+
+          }
+          &:last-child {
+          }
+        }
+      }
+      .details-top {
+        height: 35px;
+      }
+      input[type=submit] {
+        padding: 15px 0;
+      }
+      .details-radio-area {
+        .sizes-radio {
+          padding-bottom: 25px !important;
+        }
+        .label-text {
+          margin-top: 25px !important;
+        }
+        .sizing-link {
+          padding-top: 25px !important;
+        }
+      }
+
+      .details-bottom-text {
+        margin: 15px 0 0 0;
+      } 
     }
   }
 

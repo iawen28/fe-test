@@ -45,9 +45,10 @@ class App extends Component {
   }
 
   initId() {
-    let firstId = null, thirdId = null;
+    //let firstId = null;
+    let thirdId = null;
     if (this.state.products.length > 0) {
-      firstId = this.state.products[0].id;
+      //firstId = this.state.products[0].id;
       thirdId = this.state.products[2].id; // wouldn't be needed with a more populated API
     }
     this.setState({currentProductId: thirdId});
@@ -80,7 +81,12 @@ class App extends Component {
     <div className="App">
       <Header />
         <div id="feats-deets">
-          <ProdDetails colors={this.state.productColors} sizes={this.state.productSizes}/>
+          {this.state.products && 
+            <ProdDetails 
+            colors={this.state.productColors} 
+            sizes={this.state.productSizes}
+            product={this.state.products[this.state.currentProductId]}/>
+          }
           {this.state.productImages &&
           <Features imgs={this.state.productImages[this.state.currentProductId]}/> 
           }

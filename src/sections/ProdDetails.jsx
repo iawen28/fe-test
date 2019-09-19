@@ -4,19 +4,44 @@ class ProdDetails extends React.Component {
   constructor(props) {
     super();
   }
+  state = {
+    currentTab: "MEN"
+  }
   render() {
     return (
       <div id="prod-details">
+
+        <div className="prod-overview">
+          <div className="xs-hidden">{this.state.currentTab}</div>
+          <div className="deets-row first-dr">
+            <div className="description font-medium">{this.props.product && this.props.product.description}</div> 
+            <div className="price">${this.props.product && this.props.product.price}</div>
+          </div>
+          <div className="deets-row">
+            <div className="addl-detail">{this.props.product && this.props.product.color}</div>
+            <div className="reviews">
+              <span><span className="star"/>
+              <span className="star"/>
+              <span className="star"/>
+              <span className="star"/>
+              <span className="star"/>
+              154 reviews</span>
+            </div>
+          </div>
+        </div>
+
         <form>
           <div className="details-box">
             <div className="details-top uppercase font-bold" id="mw">
               <div className="men vertical-center center active" onClick={(e) => {
                 document.getElementById('mw').childNodes[0].classList.add('active');
                 document.getElementById('mw').childNodes[1].classList.remove('active');
+                this.setState({currentTab: "MEN"});
               }}><span>men</span></div>
               <div className="women vertical-center center" onClick={(e) => {
                 document.getElementById('mw').childNodes[0].classList.remove('active');
                 document.getElementById('mw').childNodes[1].classList.add('active');
+                this.setState({currentTab: "WOMEN"});
               }}><span>women</span></div>
             </div>
             <div className="details-radio-area">
@@ -27,9 +52,9 @@ class ProdDetails extends React.Component {
               {this.props.colors.map((color, i) =>{
                 if (typeof(color) === "object") 
                   return (
-                    <div>
+                    <div key={i}>
                       <input type="radio" name="color" value={color[0]+color[1]} id={color[0]+color[1]} />
-                      <label key={i} for={color[0]+color[1]}>
+                      <label htmlFor={color[0]+color[1]}>
                         <span className="color-radio-button" style={{backgroundColor: color[0]}}>
                           <span className="color2" style={{backgroundColor: color[1]}}></span>
                         </span> 
@@ -37,9 +62,9 @@ class ProdDetails extends React.Component {
                     </div>
                   )
                 return (
-                  <div>
-                    <input type="radio" name="color" value={color} id={color} />
-                    <label className="colors-label" for={color} key={i}>
+                  <div key={i}>
+                    <input type="radio" name="color" value={color} id={color}/>
+                    <label className="colors-label" htmlFor={color}>
                       <span className="color-radio-button" style={{backgroundColor: color}}></span> 
                     </label>
                   </div>
@@ -53,9 +78,9 @@ class ProdDetails extends React.Component {
               <div className="sizes-radio font-medium">
                 {this.props.sizes.map((size, i) =>{
                   return (
-                    <div className="size-box ta-center">
+                    <div className="size-box ta-center" key={"size"+size}>
                       <input type="radio" name="size" value={size} id={"size"+size} />
-                      <label className="sizes-label" for={"size"+size} key={i}>
+                      <label className="sizes-label" htmlFor={"size"+size} key={i}>
                         <span className="size-radio-button">{size}</span> 
                       </label>
                     </div>
