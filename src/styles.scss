@@ -624,11 +624,11 @@ input[type=radio] + label {
       .xs-menu > div {
         background-color: white;
         padding: 12px;
-        width: 100vw;
         height: 20px;
         border-bottom: 1px solid $grayD;
       }
       .xs-menu {
+        width: 100vw;
         display: block;
         margin-left: 0px;
         background-color: white;
