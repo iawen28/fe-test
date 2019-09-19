@@ -103,6 +103,21 @@ input[type=submit] {
   margin-left: 5px;
   font-family: GothamHTF-Bold;
   text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked + label {
+  border-color: $green;
+  border-style: solid;
+}
+
+input[type=radio] + label {
+  border-color: transparent;
+  border-style: solid;
 }
 
 #header {
@@ -153,14 +168,134 @@ input[type=submit] {
 
 #feats-deets {
   display: flex;
+  justify-content: space-between;
   #prod-details {
-    margin: 0 3.472vw;
-    width: 27.78vw;
+    transition: transform 0.15s linear;
+    margin-left: 3.472vw;
+    .details-box {
+      border: 1px solid $grayC;
+      border-bottom: 0px;
+    }
+    .details-top {
+      display: flex;
+      height: 39px;
+      .men, .women {
+        width: 50%;
+        font-size: 16px;
+        height: 100%;
+        width: 100%;
+        background-color: $grayF;
+        border-bottom: 1px solid $grayC;
+        &.active {
+          border-bottom: 0;
+          background-color: white;
+        }
+      }
+      .men {
+        border-right: 1px solid $grayC;
+      }
+    }
+    .details-radio-area {
+      padding: 0 3.5%;
+      .label-text {
+        text-transform: uppercase;
+        font-size: 12px;
+        margin: 34px 0 13px 0;
+        display: inline-block;
+      }
+      a {
+          padding-top: 33px;
+          text-decoration: underline;
+          color: $medGray;
+          font-size: 12px;
+          cursor: pointer;
+          margin: 0;
+          height: 0;
+      }
+      .colors-radio {
+        display: flex;
+        flex-wrap: wrap;
+        label {
+          display: block;
+          height: 26px;
+          width: 26px;
+          padding-top: 2px;
+          padding-left: 2px;
+        }
+        input[type=radio]:checked + label {
+          border-radius: 50%;
+          border-size: 3px;
+        }
+        .color-radio-button {
+          display: inline-block;
+          position: relative;
+          height: 22px;
+          width: 22px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 1px solid $grayC;
+          .color2 {
+            display: inline-block;
+            position: absolute;
+            width: 10px;
+            height: 100%;
+            border-right: 1px solid $grayC;
+          }
+        }
+      }
+      .sizes-radio {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        line-height: 200%;
+        padding-bottom: 35px;
+        .size-box {
+          padding: 4px;
+          position: relative;
+          height: 32px;
+          width: 32px;
+          input[type=radio]:checked + label {
+            border-size: 4px;
+          }
+          input[type=radio]:checked + label > span {
+            border: none;
+            left: -3px;
+            top: -3px;
+          }
+          label {
+            display: block;
+            height: 28px;
+            width: 28px;
+            position: absolute;
+          }
+          .size-radio-button {
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            display: inline-block;
+            height: 32px;
+            width: 32px;
+            border: 1px solid $grayC;
+          }
+        }
+      }
+    }
+    input[type=submit] {
+      border-color: $green;
+      background-color: $green;
+      width: 100%;
+      margin:0;
+      padding: 22px 10px;
+      color: white;
+    }
+    .details-bottom-text {
+      margin: 20px 0 40px 0;
+    } 
   }
+
   #features {
-    width: 61.8vw;
     margin-right: 3.472vw;
-    margin-bottom: 22px;
+    margin-bottom: 62px;
     .slick-dots {
       padding: 0;
       bottom: -4.52vw;
@@ -183,10 +318,10 @@ input[type=submit] {
       z-index: 100;
     }
     .slick-prev {
-      left: 8px;
+      left: -5px;
     }
     .slick-next {
-      right: 8px;
+      right: 40px;
     }
     .bg-img {
       width: 100%;
@@ -340,6 +475,29 @@ input[type=submit] {
       content: '';
       border-top: 1px solid $medGray;
     }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 1023px) {
+  #features {
+    width: calc(94vw - 300px);
+    margin-left: -20px;
+    height: 100%;
+    vertical-align: center;
+  }
+  #prod-details {
+    flex: 0 0 300px;
+    transform: scale(0.8);
+    transform-origin: 0% 0%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #features {
+    width: 61.8vw;
+  }
+  #prod-details {
+    width: 27.78vw;
   }
 }
 

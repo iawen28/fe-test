@@ -14,7 +14,8 @@ class App extends Component {
     currentProductId: null,
     recommendedProducts: [],
     productImages: null,
-    mwTab: "men"
+    productColors: ['#F7F7F7', '#072348', '#000000', '#BB0D0F', '#FFCF60', '#4E4E4E', '#129F7D', '#C69F97', ['#000000', '#F7F7F7'], '#215297', '#B3926E'],
+    productSizes: ['5', '5.5', '6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '12.5', '13']
   }
 
   componentDidMount() {
@@ -79,7 +80,7 @@ class App extends Component {
     <div className="App">
       <Header />
         <div id="feats-deets">
-          <ProdDetails />
+          <ProdDetails colors={this.state.productColors} sizes={this.state.productSizes}/>
           {this.state.productImages &&
           <Features imgs={this.state.productImages[this.state.currentProductId]}/> 
           }
