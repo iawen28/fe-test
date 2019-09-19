@@ -636,8 +636,6 @@ input[type=radio] + label {
         position: absolute;
         margin-top: 35px;
         border-top: 1px solid $grayD;
-        border-right: 1px solid $grayD;
-        border-left: 1px solid $grayD;
         transform: scaleY(0);
         transition: transform 0.5s ease-in-out;
         transform-origin: top;
