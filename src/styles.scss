@@ -63,7 +63,7 @@ body {
   white-space: pre;
 }
 
-.container-fluid, .col-xs-12, .col-xs4 {
+.container-fluid, .col-xs-12, .col-xs-4 {
   padding: 0 !important;
 }
 
@@ -630,6 +630,7 @@ input[type=radio] + label {
       }
       .xs-menu {
         display: block;
+        margin-left: 0px;
         background-color: white;
         z-index: 50;
         position: absolute;
